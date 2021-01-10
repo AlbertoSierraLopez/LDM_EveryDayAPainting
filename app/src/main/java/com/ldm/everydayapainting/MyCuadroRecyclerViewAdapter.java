@@ -52,7 +52,7 @@ public class MyCuadroRecyclerViewAdapter extends RecyclerView.Adapter<MyCuadroRe
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ctx, holder.mItem.getName(), Toast.LENGTH_LONG).show();
+                Toast.makeText(ctx, holder.mItem.getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }

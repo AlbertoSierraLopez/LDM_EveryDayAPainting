@@ -11,15 +11,10 @@ public class MainActivity extends AppCompatActivity implements CuadroFragment.On
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.deleteDatabase(Constants.NAME_DATABASE);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-        this.deleteDatabase(Constants.NAME_DATABASE);
     }
 
     public void onListFragmentInteraction(Cuadro item){
