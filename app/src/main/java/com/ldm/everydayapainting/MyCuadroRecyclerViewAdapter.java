@@ -40,14 +40,17 @@ public class MyCuadroRecyclerViewAdapter extends RecyclerView.Adapter<MyCuadroRe
         //Recupera la información del elemento que ocupa la posición "position"
         holder.mItem = mValues.get(position);
 
-        holder.textViewNombreRestaurante.setText(holder.mItem.getName());
-        holder.textViewDireccionRestaurante.setText(holder.mItem.getLocation());
-        holder.ratingBarValoracionRestaurante.setRating(holder.mItem.getYear());
+        holder.textViewName.setText(holder.mItem.getName());
+        holder.textViewAuthor.setText(holder.mItem.getAuthor());
+        holder.textViewYear.setText(String.valueOf(holder.mItem.getYear()));
+        holder.textViewTechnique.setText(holder.mItem.getTechnique());
+        holder.textViewStyle.setText(holder.mItem.getStyle());
+        holder.textViewLocation.setText(holder.mItem.getLocation());
 
         Glide.with(ctx)
               .load(holder.mItem.getUrl())
               .centerCrop()
-              .into(holder.imageViewPhotoRestaurante);
+              .into(holder.imageViewPhoto);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,24 +67,30 @@ public class MyCuadroRecyclerViewAdapter extends RecyclerView.Adapter<MyCuadroRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView textViewNombreRestaurante;
-        public final TextView textViewDireccionRestaurante;
-        public final ImageView imageViewPhotoRestaurante;
-        public final RatingBar ratingBarValoracionRestaurante;
+        public final TextView textViewName;
+        public final ImageView imageViewPhoto;
+        public final TextView textViewAuthor;
+        public final TextView textViewYear;
+        public final TextView textViewTechnique;
+        public final TextView textViewStyle;
+        public final TextView textViewLocation;
         public Cuadro mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            textViewNombreRestaurante = view.findViewById(R.id.textViewNombre);
-            textViewDireccionRestaurante = view.findViewById(R.id.textViewDireccion);
-            imageViewPhotoRestaurante = view.findViewById(R.id.imageViewPhoto);
-            ratingBarValoracionRestaurante = view.findViewById(R.id.ratingBarValoracion);
+            textViewName = view.findViewById(R.id.textViewName);
+            imageViewPhoto = view.findViewById(R.id.imageViewPhoto);
+            textViewAuthor = view.findViewById(R.id.textViewAuthor);
+            textViewYear = view.findViewById(R.id.textViewYear);
+            textViewTechnique = view.findViewById(R.id.textViewTechnique);
+            textViewStyle = view.findViewById(R.id.textViewStyle);
+            textViewLocation = view.findViewById(R.id.textViewLocation);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + textViewNombreRestaurante.getText() + "'";
+            return super.toString() + " '" + textViewName.getText() + " - " + textViewAuthor.getText() +  "'";
         }
     }
 }

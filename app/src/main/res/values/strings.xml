@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Every Day a Painting</string>
-    <string name="imageViewPhoto">ImageView Photo</string>
-    <string name="textview">TextView</string>
-    <string name="direcci_n">Direccion</string>
+    <string name="imageViewPhoto">Imagen del cuadro</string>
+    <string name="textViewName">Name</string>
+    <string name="textViewYear">Year</string>
+    <string name="textViewAuthor">Author</string>
+    <string name="textViewTechnique">Technique</string>
+    <string name="textViewStyle">Style</string>
+    <string name="textViewLocation">Location</string>
 </resources>
