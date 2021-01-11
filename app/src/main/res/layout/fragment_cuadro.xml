@@ -30,10 +30,9 @@
             android:layout_marginTop="12dp"
             android:contentDescription="@string/imageViewPhoto" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textViewAuthor"
@@ -42,7 +41,6 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="100dp"
                 android:layout_marginRight="0dp"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/textViewAuthor" />
 
@@ -53,10 +51,9 @@
                 android:layout_marginStart="100dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="12dp"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/textViewYear" />
-        </LinearLayout>
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/textViewTechnique"
