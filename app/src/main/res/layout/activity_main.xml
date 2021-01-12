@@ -24,11 +24,12 @@
         android:text="@string/btnTodos" />
 
     <Button
-        android:id="@+id/btnDia"
+        android:id="@+id/btnRandom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="@string/btnDia" />
+        android:onClick="onClickRandom"
+        android:text="@string/btnRandom" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,13 +45,14 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:text="@string/editTextAutor" />
+            android:hint="@string/editTextAutor" />
 
         <Button
             android:id="@+id/btnBuscarAutor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClickAutor"
             android:text="@string/btnBuscarAutor" />
     </LinearLayout>
 
@@ -68,13 +70,14 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:text="@string/editTextYear" />
+            android:hint="@string/editTextYear" />
 
         <Button
             android:id="@+id/btnBuscarYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClickYear"
             android:text="@string/btnBuscarYear" />
     </LinearLayout>
 
@@ -92,13 +95,14 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:text="@string/editTextEstilo" />
+            android:hint="@string/editTextEstilo" />
 
         <Button
             android:id="@+id/btnBuscarEstilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClickEstilo"
             android:text="@string/btnBuscarEstilo" />
     </LinearLayout>
 

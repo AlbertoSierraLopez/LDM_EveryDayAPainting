@@ -27,7 +27,7 @@ public class CuadroFragment extends Fragment {
     RecyclerView recyclerView;
     MyCuadroRecyclerViewAdapter adapterCuadros;
     List<Cuadro> cuadroList;
-    String query;
+    String query, data;
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -66,6 +66,7 @@ public class CuadroFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cuadro_list, container, false);
 
         query = ((CuadroActivity) getActivity()).getQuery();
+        data =  ((CuadroActivity) getActivity()).getData();
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -81,10 +82,21 @@ public class CuadroFragment extends Fragment {
             // Dependiendo del query, la consulta cambiará
             switch (query) {
                 case "all": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findAllCuadro();
-                           break;
+                            break;
+                case "random": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findRandomCuadro();
+                               break;
+                case "author": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findCuadroByAuthor(data);
+                               break;
+                case "year": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findCuadroByYear(Integer.parseInt(data));
+                             break;
+                case "style": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findCuadroByStyle(data);
+                              break;
                 default: cuadroList = new ArrayList<>();
-                         Toast.makeText(context, "No hay cuadros que mostrar", Toast.LENGTH_LONG).show();
                          break;
+            }
+
+            if (cuadroList.size() == 0) {
+                Toast.makeText(context, "No hay cuadros que mostrar", Toast.LENGTH_LONG).show();
             }
 
             //Asociamos el Adaptador al RecyclerView

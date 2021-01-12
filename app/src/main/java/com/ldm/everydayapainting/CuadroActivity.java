@@ -12,12 +12,13 @@ import com.ldm.everydayapainting.database.entity.Cuadro;
 
 public class CuadroActivity extends AppCompatActivity implements CuadroFragment.OnListFragmentInteractionListener {
 
-    private String query;
+    private String query, data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         query = getIntent().getStringExtra("query");
+        data = getIntent().getStringExtra("data");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuadro);
@@ -26,6 +27,10 @@ public class CuadroActivity extends AppCompatActivity implements CuadroFragment.
 
     public String getQuery() {
         return query;
+    }
+
+    public String getData() {
+        return data;
     }
 
     public void onListFragmentInteraction(Cuadro item){
