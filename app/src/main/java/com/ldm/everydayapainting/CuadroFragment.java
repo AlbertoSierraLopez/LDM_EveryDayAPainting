@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.ldm.everydayapainting.database.db.MyRoom;
 import com.ldm.everydayapainting.database.entity.Cuadro;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -25,7 +27,7 @@ public class CuadroFragment extends Fragment {
     RecyclerView recyclerView;
     MyCuadroRecyclerViewAdapter adapterCuadros;
     List<Cuadro> cuadroList;
-
+    String query;
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -63,6 +65,8 @@ public class CuadroFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cuadro_list, container, false);
 
+        query = ((CuadroActivity) getActivity()).getQuery();
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -73,8 +77,15 @@ public class CuadroFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            // Lista de elementos (Cuadros)
-            cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findAllCuadro();
+            // Rellenar la lista de elementos (Cuadros)
+            // Dependiendo del query, la consulta cambiará
+            switch (query) {
+                case "all": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findAllCuadro();
+                           break;
+                default: cuadroList = new ArrayList<>();
+                         Toast.makeText(context, "No hay cuadros que mostrar", Toast.LENGTH_LONG).show();
+                         break;
+            }
 
             //Asociamos el Adaptador al RecyclerView
             adapterCuadros = new MyCuadroRecyclerViewAdapter(getActivity(), cuadroList, mListener);

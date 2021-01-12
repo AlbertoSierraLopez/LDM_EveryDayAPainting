@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickTodos(View v) {
         Intent intentTodos = new Intent(this, CuadroActivity.class);
+        intentTodos.putExtra("query", "all");
         startActivity(intentTodos);
     }
 

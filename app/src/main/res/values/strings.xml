@@ -7,7 +7,6 @@
     <string name="textViewTechnique">Technique</string>
     <string name="textViewStyle">Style</string>
     <string name="textViewLocation">Location</string>
-    <string name="textViewTitulo">EVERY DAY A PAINTING</string>
     <string name="btnDia">Cuadro del día</string>
     <string name="btnTodos">Ver todos los cuadros</string>
     <string name="editTextEstilo">Estilo</string>
