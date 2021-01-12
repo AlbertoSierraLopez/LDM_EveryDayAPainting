@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CuadroActivity.class);
         intent.putExtra("query", "author");
         intent.putExtra("data", edAutor.getText().toString());
+        edAutor.setText("");    // Limpiar el Edit Text
         startActivity(intent);
     }
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CuadroActivity.class);
         intent.putExtra("query", "year");
         intent.putExtra("data", edYear.getText().toString());
+        edYear.setText("");    // Limpiar el Edit Text
         startActivity(intent);
     }
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CuadroActivity.class);
         intent.putExtra("query", "style");
         intent.putExtra("data", edEstilo.getText().toString());
+        edEstilo.setText("");    // Limpiar el Edit Text
         startActivity(intent);
     }
 
