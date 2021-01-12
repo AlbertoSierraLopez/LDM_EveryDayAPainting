@@ -2,13 +2,15 @@ package com.ldm.everydayapainting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.ldm.everydayapainting.constants.Constants;
 import com.ldm.everydayapainting.database.db.MyRoom;
 import com.ldm.everydayapainting.database.entity.Cuadro;
 
-public class MainActivity extends AppCompatActivity implements CuadroFragment.OnListFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,12 @@ public class MainActivity extends AppCompatActivity implements CuadroFragment.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    public void onListFragmentInteraction(Cuadro item){
 
     }
+
+    public void onClickTodos(View v) {
+        Intent intentTodos = new Intent(this, CuadroActivity.class);
+        startActivity(intentTodos);
+    }
+
 }
