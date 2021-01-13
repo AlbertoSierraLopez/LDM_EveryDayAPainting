@@ -9,15 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.ldm.everydayapainting.constants.Constants;
 import com.ldm.everydayapainting.database.db.MyRoom;
-import com.ldm.everydayapainting.database.entity.Cuadro;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText edAutor, edYear;
+    private EditText editTextAutor, editTextSiglo;
     private Spinner spinnerEstilo;
 
     @Override
@@ -26,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Configurar las views
-        edAutor = findViewById(R.id.editTextAutor);
-        edYear = findViewById(R.id.editTextYear);
+        editTextAutor = findViewById(R.id.editTextAutor);
+        editTextSiglo = findViewById(R.id.editTextSiglo);
 
         // Poner en el spinner todos los estilos guardados
         spinnerEstilo = (Spinner)findViewById(R.id.spinnerEstilo);
@@ -47,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         // Limpiar los Edit Text después de una búsqueda
         // Se limpian al volver hacia atrás desde la pantalla en la que se mostrarían los cuadros buscados
-        edAutor.setText("");
-        edYear.setText("");
+        editTextAutor.setText("");
+        editTextSiglo.setText("");
+        // También se limpia el spinner colocando la selección sobre la opción 0, que es el hint
+        spinnerEstilo.setSelection(0);
     }
 
     public void onClickTodos(View v) {
@@ -66,15 +66,15 @@ public class MainActivity extends AppCompatActivity {
     public void onClickAutor(View v) {
         Intent intent = new Intent(this, CuadroActivity.class);
         intent.putExtra("query", "author");
-        intent.putExtra("data", edAutor.getText().toString());
+        intent.putExtra("data", editTextAutor.getText().toString());
 
         startActivity(intent);
     }
 
-    public void onClickYear(View v) {
+    public void onClickSiglo(View v) {
         Intent intent = new Intent(this, CuadroActivity.class);
-        intent.putExtra("query", "year");
-        intent.putExtra("data", edYear.getText().toString());
+        intent.putExtra("query", "century");
+        intent.putExtra("data", editTextSiglo.getText().toString());
 
         startActivity(intent);
     }

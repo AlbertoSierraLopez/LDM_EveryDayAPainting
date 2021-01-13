@@ -70,23 +70,23 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextYear"
+            android:id="@+id/editTextSiglo"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:hint="@string/editTextYear"
+            android:hint="@string/editTextSiglo"
             android:importantForAutofill="no" />
 
         <ImageButton
-            android:id="@+id/btnBuscarYear"
+            android:id="@+id/btnBuscarSiglo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/btnBuscar"
-            android:onClick="onClickYear"
+            android:onClick="onClickSiglo"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
     </LinearLayout>
 

@@ -89,8 +89,8 @@ public class CuadroFragment extends Fragment {
                                break;
                 case "author": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findCuadroByAuthor(data);
                                break;
-                case "year": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findCuadroByYear(Integer.parseInt(data));
-                             break;
+                case "century": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findCuadroByCentury(Integer.parseInt(data));
+                                break;
                 case "style": cuadroList =  MyRoom.getMyRoom(getContext()).cuadroDAO().findCuadroByStyle(data);
                               break;
                 default: cuadroList = new ArrayList<>();

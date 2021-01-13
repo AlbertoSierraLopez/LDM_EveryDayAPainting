@@ -36,8 +36,9 @@ public interface CuadroDAO {
     @Query("SELECT * FROM cuadros WHERE author LIKE :author")
     List<Cuadro> findCuadroByAuthor(String author);
 
-    @Query("SELECT * FROM cuadros WHERE year LIKE :year")
-    List<Cuadro> findCuadroByYear(int year);
+    // Como entran siglos y los cuadros tienen años, se hace una búsqueda entre los años comprendidos dentro del siglo seleccionado
+    @Query("SELECT * FROM cuadros WHERE year BETWEEN :century*100-99 AND :century*100")
+    List<Cuadro> findCuadroByCentury(int century);
 
     @Query("SELECT * FROM cuadros WHERE style LIKE :style")
     List<Cuadro> findCuadroByStyle(String style);
