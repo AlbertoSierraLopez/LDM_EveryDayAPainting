@@ -2,19 +2,29 @@ package com.ldm.everydayapainting;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.ColorSpace;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.ceylonlabs.imageviewpopup.ImagePopup;
 import com.ldm.everydayapainting.database.entity.Cuadro;
 
 import java.util.List;
+
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 public class MyCuadroRecyclerViewAdapter extends RecyclerView.Adapter<MyCuadroRecyclerViewAdapter.ViewHolder> {
 
@@ -52,10 +62,20 @@ public class MyCuadroRecyclerViewAdapter extends RecyclerView.Adapter<MyCuadroRe
               .centerCrop()
               .into(holder.imageViewPhoto);
 
+        // Image Pop up con la imagen del cuadro a pantalla completa
+        final ImagePopup imagePopup = new ImagePopup(ctx);
+        imagePopup.setFullScreen(true);
+        imagePopup.setBackgroundColor(ctx.getResources().getColor(R.color.cardview_dark_background));
+        imagePopup.setHideCloseIcon(true);
+        imagePopup.setImageOnClickClose(true);
+        imagePopup.initiatePopupWithGlide(holder.mItem.getUrl());
+
+        // Se activa al hacer click en la tarjeta del cuadro
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ctx, holder.mItem.getName(), Toast.LENGTH_SHORT).show();
+                /** Initiate Popup view **/
+                imagePopup.viewPopup();
             }
         });
     }
