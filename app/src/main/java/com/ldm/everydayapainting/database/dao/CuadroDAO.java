@@ -42,8 +42,10 @@ public interface CuadroDAO {
     @Query("SELECT * FROM cuadros WHERE style LIKE :style")
     List<Cuadro> findCuadroByStyle(String style);
 
-
     @Query("SELECT * FROM cuadros ORDER BY RANDOM() LIMIT 1")
     List<Cuadro> findRandomCuadro();
+
+    @Query("SELECT DISTINCT style FROM cuadros")
+    List<String> findAllStyle();
 
 }

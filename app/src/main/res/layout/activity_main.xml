@@ -44,7 +44,7 @@
 
         <EditText
             android:id="@+id/editTextAutor"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:ems="10"
@@ -71,7 +71,7 @@
 
         <EditText
             android:id="@+id/editTextYear"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:ems="10"
@@ -96,16 +96,11 @@
         android:layout_marginTop="12dp"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextEstilo"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spinnerEstilo"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="textPersonName"
-            android:hint="@string/editTextEstilo"
-            android:importantForAutofill="no" />
+            android:layout_weight="10" />
 
         <ImageButton
             android:id="@+id/btnBuscarEstilo"
