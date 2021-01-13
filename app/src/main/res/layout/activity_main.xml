@@ -19,7 +19,7 @@
         android:id="@+id/btnTodos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:onClick="onClickTodos"
         android:text="@string/btnTodos" />
 
@@ -28,13 +28,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:contentDescription="@string/btnAleatorioContentDescription"
+        android:drawableStart="@drawable/ic_baseline_casino_24"
+        android:drawableLeft="@drawable/ic_baseline_casino_24"
+        android:drawableEnd="@drawable/ic_baseline_casino_24"
+        android:drawableRight="@drawable/ic_baseline_casino_24"
         android:onClick="onClickRandom"
         android:text="@string/btnRandom" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:orientation="horizontal">
 
         <EditText
@@ -44,16 +49,18 @@
             android:layout_weight="10"
             android:ems="10"
             android:gravity="center"
+            android:hint="@string/editTextAutor"
             android:inputType="textPersonName"
-            android:hint="@string/editTextAutor" />
+            android:importantForAutofill="no" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnBuscarAutor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/btnBuscar"
             android:onClick="onClickAutor"
-            android:text="@string/btnBuscarAutor" />
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,15 +77,17 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:hint="@string/editTextYear" />
+            android:hint="@string/editTextYear"
+            android:importantForAutofill="no" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnBuscarYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/btnBuscar"
             android:onClick="onClickYear"
-            android:text="@string/btnBuscarYear" />
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,15 +104,17 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:hint="@string/editTextEstilo" />
+            android:hint="@string/editTextEstilo"
+            android:importantForAutofill="no" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnBuscarEstilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/btnBuscar"
             android:onClick="onClickEstilo"
-            android:text="@string/btnBuscarEstilo" />
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
     </LinearLayout>
 
 </LinearLayout>
