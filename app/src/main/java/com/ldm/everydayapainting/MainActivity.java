@@ -26,11 +26,9 @@ public class MainActivity extends AppCompatActivity {
         // Configurar las views
         editTextAutor = findViewById(R.id.editTextAutor);
         editTextSiglo = findViewById(R.id.editTextSiglo);
+        spinnerEstilo = (Spinner) findViewById(R.id.spinnerEstilo);
 
         // Poner en el spinner todos los estilos guardados
-        spinnerEstilo = (Spinner)findViewById(R.id.spinnerEstilo);
-
-        // Lista de estilos
         ArrayList<String> spinnerList = new ArrayList<>();
         spinnerList.add("Selecciona un estilo");
         spinnerList.addAll(MyRoom.getMyRoom(this).cuadroDAO().findAllStyle());
