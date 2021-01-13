@@ -51,7 +51,7 @@
             android:gravity="center"
             android:hint="@string/editTextAutor"
             android:inputType="textPersonName"
-            android:importantForAutofill="no" />
+            android:autofillHints="AUTOFILL_HINT_PERSON_NAME" />
 
         <ImageButton
             android:id="@+id/btnBuscarAutor"
@@ -76,7 +76,7 @@
             android:layout_weight="10"
             android:ems="10"
             android:gravity="center"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:hint="@string/editTextSiglo"
             android:importantForAutofill="no" />
 
@@ -100,6 +100,8 @@
             android:id="@+id/spinnerEstilo"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
             android:layout_weight="10" />
 
         <ImageButton

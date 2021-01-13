@@ -46,6 +46,12 @@ public interface CuadroDAO {
     @Query("SELECT * FROM cuadros ORDER BY RANDOM() LIMIT 1")
     List<Cuadro> findRandomCuadro();
 
+    @Query("SELECT DISTINCT name FROM cuadros")
+    List<String> findAllName();
+
+    @Query("SELECT DISTINCT author FROM cuadros")
+    List<String> findAllAuthor();
+
     @Query("SELECT DISTINCT style FROM cuadros")
     List<String> findAllStyle();
 
