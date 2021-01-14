@@ -11,7 +11,7 @@
         android:id="@+id/imgPortada"
         android:layout_width="match_parent"
         android:layout_height="256dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@string/imgPortadaDescription"
         app:srcCompat="@drawable/canvas" />
 
@@ -19,8 +19,13 @@
         android:id="@+id/btnTodos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:onClick="onClickTodos"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:text="@string/btnTodos" />
 
     <Button
@@ -33,13 +38,22 @@
         android:drawableLeft="@drawable/ic_baseline_casino_24"
         android:drawableEnd="@drawable/ic_baseline_casino_24"
         android:drawableRight="@drawable/ic_baseline_casino_24"
+        android:paddingLeft="92dp"
+        android:paddingRight="92dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:onClick="onClickRandom"
         android:text="@string/btnRandom" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:orientation="horizontal">
 
         <EditText
@@ -55,10 +69,12 @@
 
         <ImageButton
             android:id="@+id/btnBuscarAutor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="38dp"
             android:layout_weight="1"
             android:contentDescription="@string/btnBuscar"
+            style="@style/Widget.AppCompat.Button"
+            android:background="@color/colorPrimary"
             android:onClick="onClickAutor"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
     </LinearLayout>
@@ -67,6 +83,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:orientation="horizontal">
 
         <EditText
@@ -82,10 +100,12 @@
 
         <ImageButton
             android:id="@+id/btnBuscarSiglo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="38dp"
             android:layout_weight="1"
             android:contentDescription="@string/btnBuscar"
+            style="@style/Widget.AppCompat.Button"
+            android:background="@color/colorPrimary"
             android:onClick="onClickSiglo"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
     </LinearLayout>
@@ -94,6 +114,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:orientation="horizontal">
 
         <Spinner
@@ -106,10 +128,12 @@
 
         <ImageButton
             android:id="@+id/btnBuscarEstilo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="38dp"
             android:layout_weight="1"
             android:contentDescription="@string/btnBuscar"
+            style="@style/Widget.AppCompat.Button"
+            android:background="@color/colorPrimary"
             android:onClick="onClickEstilo"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
     </LinearLayout>

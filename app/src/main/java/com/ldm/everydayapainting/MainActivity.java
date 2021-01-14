@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Action Bar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
         // Configurar las views
         editTextAutor = findViewById(R.id.editTextAutor);
         editTextSiglo = findViewById(R.id.editTextSiglo);
