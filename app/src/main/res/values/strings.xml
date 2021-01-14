@@ -7,8 +7,8 @@
     <string name="textViewTechnique">Technique</string>
     <string name="textViewStyle">Style</string>
     <string name="textViewLocation">Location</string>
-    <string name="btnRandom">Cuadro aleatorio</string>
-    <string name="btnTodos">Ver todos los cuadros</string>
+    <string name="btnRandom">Cuadro Aleatorio</string>
+    <string name="btnTodos">Ver Galería</string>
     <string name="editTextSiglo">Siglo</string>
     <string name="editTextAutor">Autor</string>
     <string name="imgPortadaDescription">Imagen de portada de la aplicación</string>

@@ -3,6 +3,7 @@ package com.ldm.everydayapainting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText editTextAutor, editTextSiglo;
     private Spinner spinnerEstilo;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         editTextAutor = findViewById(R.id.editTextAutor);
         editTextSiglo = findViewById(R.id.editTextSiglo);
         spinnerEstilo = (Spinner) findViewById(R.id.spinnerEstilo);
+
+        // Poner la música
+        mp = MediaPlayer.create(this, R.raw.museum_entrance);
+        mp.setLooping(true);
+        mp.start();
 
         // Poner en el spinner todos los estilos guardados
         ArrayList<String> spinnerList = new ArrayList<>();
