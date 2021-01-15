@@ -5,9 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 
 import com.ldm.everydayapainting.database.db.MyRoom;
@@ -18,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText editTextAutor, editTextSiglo;
     private Spinner spinnerEstilo;
+    private ImageButton btnVolumen;
     private MediaPlayer mp;
 
     @Override
@@ -33,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         editTextAutor = findViewById(R.id.editTextAutor);
         editTextSiglo = findViewById(R.id.editTextSiglo);
         spinnerEstilo = (Spinner) findViewById(R.id.spinnerEstilo);
+        btnVolumen = findViewById(R.id.btnVolumen);
 
         // Poner la música
         mp = MediaPlayer.create(this, R.raw.museum_entrance);
@@ -58,6 +66,41 @@ public class MainActivity extends AppCompatActivity {
         editTextSiglo.setText("");
         // También se limpia el spinner colocando la selección sobre la opción 0, que es el hint
         spinnerEstilo.setSelection(0);
+    }
+
+    public void onClickAyuda(View v) {
+        // inflate the layout of the popup window
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window, null);
+
+        // create the popup window
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true; // lets taps outside the popup also dismiss it
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        // show the popup window
+        // which view you pass in doesn't matter, it is only used for the window token
+        popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
+
+        // dismiss the popup window when touched
+        popupView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                popupWindow.dismiss();
+                return true;
+            }
+        });
+    }
+
+    public void onClickVolumen(View v) {
+        if (mp.isPlaying()) {
+            mp.pause();
+            btnVolumen.setImageResource(R.drawable.ic_baseline_volume_off_24);
+        } else {
+            mp.start();
+            btnVolumen.setImageResource(R.drawable.ic_baseline_volume_up_24);
+        }
     }
 
     public void onClickTodos(View v) {

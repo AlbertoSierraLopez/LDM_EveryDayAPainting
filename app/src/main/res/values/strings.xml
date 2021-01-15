@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Every Day a Painting</string>
+    <string name="app_name">Every Day A Painting</string>
     <string name="imageViewPhoto">Imagen del cuadro</string>
     <string name="textViewName">Name</string>
     <string name="textViewYear">Year</string>
@@ -14,4 +14,11 @@
     <string name="imgPortadaDescription">Imagen de portada de la aplicación</string>
     <string name="btnBuscar">Botón búqueda</string>
     <string name="btnAleatorioContentDescription">Cuadro Aleatorio</string>
+    <string name="btnAyuda">Boton de ayuda</string>
+    <string name="btnVolumen">Boton de volumen</string>
+    <string name="txtAyuda">Bienvenido a nuestra Galería de Arte!\n\n
+                            Puedes mirar los cuadros o dejar que la app seleccione uno aleatorio para tí\n\n
+                            También puedes buscar cuadros en nuestra base de datos,\n
+                            puedes buscar por Autor, Siglo o Estilo, pero por separado\n\n
+                            Esperamos que disfrutes!</string>
 </resources>

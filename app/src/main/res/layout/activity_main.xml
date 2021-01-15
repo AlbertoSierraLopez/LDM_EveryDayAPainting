@@ -7,13 +7,50 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-    <ImageView
-        android:id="@+id/imgPortada"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="256dp"
-        android:layout_marginTop="12dp"
-        android:contentDescription="@string/imgPortadaDescription"
-        app:srcCompat="@drawable/canvas" />
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@+id/imgPortada"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:contentDescription="@string/imgPortadaDescription"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/canvas" />
+
+        <ImageButton
+            android:id="@+id/btnHelp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="56dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/btnAyuda"
+            android:onClick="onClickAyuda"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_help_outline_24" />
+
+        <ImageButton
+            android:id="@+id/btnVolumen"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="56dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/btnVolumen"
+            android:onClick="onClickVolumen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnHelp"
+            app:srcCompat="@drawable/ic_baseline_volume_up_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btnTodos"

@@ -65,7 +65,7 @@ public class MyCuadroRecyclerViewAdapter extends RecyclerView.Adapter<MyCuadroRe
         // Image Pop up con la imagen del cuadro a pantalla completa
         final ImagePopup imagePopup = new ImagePopup(ctx);
         imagePopup.setFullScreen(true);
-        imagePopup.setBackgroundColor(ctx.getResources().getColor(R.color.colorPrimaryDark));
+        imagePopup.setBackgroundColor(ctx.getResources().getColor(R.color.colorBackgroundDark));
         imagePopup.setHideCloseIcon(true);
         imagePopup.setImageOnClickClose(true);
         imagePopup.initiatePopupWithGlide(holder.mItem.getUrl());
