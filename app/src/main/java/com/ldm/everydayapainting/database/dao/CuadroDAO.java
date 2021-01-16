@@ -27,20 +27,25 @@ public interface CuadroDAO {
     @Query("DELETE FROM cuadros")
     void deleteAllCuadro();
 
-    @Query("SELECT * FROM cuadros")
+    // Orden alfabético por autores
+    @Query("SELECT * FROM cuadros ORDER BY author")
     List<Cuadro> findAllCuadro();
 
     @Query("SELECT * FROM cuadros WHERE name LIKE :name")
     Cuadro findCuadroByName(String name);
 
-    @Query("SELECT * FROM cuadros WHERE author LIKE :author")
+    // Búsqueda inteligente para que con poner "Goya" ya encuentre "Francisco de Goya"
+    // Orden numérico por año
+    @Query("SELECT * FROM cuadros WHERE author LIKE '%' || :author || '%' ORDER BY year")
     List<Cuadro> findCuadroByAuthor(String author);
 
     // Como entran siglos y los cuadros tienen años, se hace una búsqueda entre los años comprendidos dentro del siglo seleccionado
-    @Query("SELECT * FROM cuadros WHERE year BETWEEN :century*100-99 AND :century*100")
+    // Orden numérico por año
+    @Query("SELECT * FROM cuadros WHERE year BETWEEN :century*100-99 AND :century*100 ORDER BY year")
     List<Cuadro> findCuadroByCentury(int century);
 
-    @Query("SELECT * FROM cuadros WHERE style LIKE :style")
+    // Orden alfabético por autores
+    @Query("SELECT * FROM cuadros WHERE style LIKE :style ORDER BY author")
     List<Cuadro> findCuadroByStyle(String style);
 
     @Query("SELECT * FROM cuadros ORDER BY RANDOM() LIMIT 1")
@@ -52,7 +57,8 @@ public interface CuadroDAO {
     @Query("SELECT DISTINCT author FROM cuadros")
     List<String> findAllAuthor();
 
-    @Query("SELECT DISTINCT style FROM cuadros")
+    // Orden alfabético por estilo
+    @Query("SELECT DISTINCT style FROM cuadros ORDER BY style")
     List<String> findAllStyle();
 
 }
