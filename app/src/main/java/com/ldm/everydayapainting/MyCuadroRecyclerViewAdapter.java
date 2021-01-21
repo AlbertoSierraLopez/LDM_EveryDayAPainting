@@ -3,7 +3,9 @@ package com.ldm.everydayapainting;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.ColorSpace;
 import android.view.Gravity;
@@ -70,14 +72,33 @@ public class MyCuadroRecyclerViewAdapter extends RecyclerView.Adapter<MyCuadroRe
         imagePopup.setImageOnClickClose(true);
         imagePopup.initiatePopupWithGlide(holder.mItem.getUrl());
 
-        // Se activa al hacer click en la tarjeta del cuadro
-        holder.mView.setOnClickListener(new View.OnClickListener() {
+        // Se activa al hacer click en la imagen
+        holder.imageViewPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /** Initiate Popup view **/
                 imagePopup.viewPopup();
             }
         });
+
+        holder.textViewAuthor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_WEB_SEARCH );
+                intent.putExtra(SearchManager.QUERY, holder.mItem.getAuthor());
+                ctx.startActivity(intent);
+            }
+        });
+
+        holder.textViewStyle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_WEB_SEARCH );
+                intent.putExtra(SearchManager.QUERY, holder.mItem.getStyle());
+                ctx.startActivity(intent);
+            }
+        });
+
     }
 
     @Override

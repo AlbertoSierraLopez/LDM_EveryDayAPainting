@@ -43,6 +43,7 @@
                 android:layout_marginEnd="100dp"
                 android:layout_marginRight="0dp"
                 android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
                 android:text="@string/textViewAuthor" />
 
             <TextView
@@ -70,6 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
             android:text="@string/textViewStyle" />
 
         <TextView

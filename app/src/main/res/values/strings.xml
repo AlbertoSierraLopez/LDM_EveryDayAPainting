@@ -18,6 +18,7 @@
     <string name="btnVolumen">Boton de volumen</string>
     <string name="txtAyuda">Bienvenido a nuestra Galería de Arte!\n\n
                             Puedes mirar los cuadros o dejar que la app seleccione uno aleatorio para tí\n\n
+                            Si pinchas en el autor de un cuadro o en su estilo, puedes leer más sobre ellos\n
                             También puedes buscar cuadros en nuestra base de datos,\n
                             puedes buscar por Autor, Siglo o Estilo, pero por separado\n\n
                             Esperamos que disfrutes!</string>
