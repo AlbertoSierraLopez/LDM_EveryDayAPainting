@@ -116,19 +116,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickAutor(View v) {
-        Intent intent = new Intent(this, CuadroActivity.class);
-        intent.putExtra("query", "author");
-        intent.putExtra("data", editTextAutor.getText().toString());
+        if (!editTextAutor.getText().toString().equals("")) {
+            Intent intent = new Intent(this, CuadroActivity.class);
+            intent.putExtra("query", "author");
+            intent.putExtra("data", editTextAutor.getText().toString());
 
-        startActivity(intent);
+            startActivity(intent);
+        }
     }
 
     public void onClickSiglo(View v) {
-        Intent intent = new Intent(this, CuadroActivity.class);
-        intent.putExtra("query", "century");
-        intent.putExtra("data", editTextSiglo.getText().toString());
+        if (!editTextSiglo.getText().toString().equals("")) {
+            Intent intent = new Intent(this, CuadroActivity.class);
+            intent.putExtra("query", "century");
+            intent.putExtra("data", editTextSiglo.getText().toString());
 
-        startActivity(intent);
+            startActivity(intent);
+        }
     }
 
     public void onClickEstilo(View v) {
